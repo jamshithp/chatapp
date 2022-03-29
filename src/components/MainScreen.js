@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./MainScreen.css";
+import * as HiIcons from "react-icons/hi";
+import * as BiIcons from "react-icons/bi";
+
 
 function MainScreen(props) {
   const { mockData } = props;
@@ -15,14 +18,16 @@ function MainScreen(props) {
       .map((item) => item.message)
       .slice(-1)[0];
   };
+	
 
   const sortedData = mockData.sort((a, b) => a.order - b.order);
 
   return (
     <div className="wrapper">
       <div className="chat-wrapper">
-        <div className="chat-header">
-          <h1>Chat</h1>
+        <div className="chat-main-header">
+          <h2>Chat</h2>
+					<BiIcons.BiSearch size={25}/>
         </div>
         <div className="chat-list">
           {sortedData &&
@@ -34,9 +39,9 @@ function MainScreen(props) {
                   onClick={() => routeHandler(item)}
                 >
                   <div className="chat-item-image">
-                    <img src={item.imagePath} />
+										<HiIcons.HiOutlineUserCircle size={30} />
                   </div>
-                  <div>
+                  <div className="user-chat">
                     <div className="chat-item-name">{item.name}</div>
                     <div className="chat-item-message">
                       {item.sentMessages

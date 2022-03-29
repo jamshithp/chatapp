@@ -10,6 +10,8 @@ import {
 import { useEffect, useState } from "react";
 import axios from "axios";
 
+
+
 function App() {
   const [mockData, setMockData] = useState([]);
   const [chatUpdated, setChatUpdated] = useState();
@@ -17,6 +19,8 @@ function App() {
   const dataHandler = (chat) => {
     setChatUpdated(chat);
   };
+
+
 
   const baseUrl = "https://auth-d00f9-default-rtdb.firebaseio.com/mess.json";
 

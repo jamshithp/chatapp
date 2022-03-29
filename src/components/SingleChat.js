@@ -34,6 +34,7 @@ function SingleChat(props) {
           return (
             <div key={index} className="chat-wrapper">
               <div className="chat-header">
+                
                 <h2>{item.name}</h2>
               </div>
               <div className="user-chat-wrapper">
